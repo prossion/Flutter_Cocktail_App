@@ -1,5 +1,5 @@
 class Cocktail {
-  final int id;
+  final String id;
   final String nameDrink;
   final String tagsDrink;
   final String categoryDrink;
@@ -65,36 +65,36 @@ class Cocktail {
 
   factory Cocktail.fromJson(Map<String, dynamic> json) {
     return Cocktail(
-      id: json['idDrink'],
-      nameDrink: json['strDrink'],
-      tagsDrink: json['strTags'],
-      categoryDrink: json['strCategory'],
-      alcoholicDrink: json['strAlcoholic'],
-      glassDrink: json['strGlass'],
-      instructions: json['strInstructions'],
-      photoDrink: json['strDrinkThumb'],
-      ingradient1: json['strIngredient1'],
-      ingradient2: json['strIngredient2'],
-      ingradient3: json['strIngredient3'],
-      ingradient4: json['strIngredient4'],
-      ingradient5: json['strIngredient5'],
-      ingradient6: json['strIngredient6'],
-      ingradient7: json['strIngredient7'],
-      ingradient8: json['strIngredient8'],
-      ingradient9: json['strIngredient9'],
-      ingradient10: json['strIngredient10'],
-      measure1: json['strMeasure1'],
-      measure2: json['strMeasure2'],
-      measure3: json['strMeasure3'],
-      measure4: json['strMeasure4'],
-      measure5: json['strMeasure5'],
-      measure6: json['strMeasure6'],
-      measure7: json['strMeasure7'],
-      measure8: json['strMeasure8'],
-      measure9: json['strMeasure9'],
-      measure10: json['strMeasure10'],
-      imageSource: json['strImageSource'],
-      dateModified: json['dateModified'],
+      id: json['idDrink'] as String,
+      nameDrink: json["strDrink"] as String,
+      tagsDrink: json['strTags'] as String,
+      categoryDrink: json['strCategory'] as String,
+      alcoholicDrink: json['strAlcoholic'] as String,
+      glassDrink: json['strGlass'] as String,
+      instructions: json['strInstructions'] as String,
+      photoDrink: json['strDrinkThumb'] as String,
+      ingradient1: json['strIngredient1'] as String,
+      ingradient2: json['strIngredient2'] as String,
+      ingradient3: json['strIngredient3'] as String,
+      ingradient4: json['strIngredient4'] as String,
+      ingradient5: json['strIngredient5'] as String,
+      ingradient6: json['strIngredient6'] as String,
+      ingradient7: json['strIngredient7'] as String,
+      ingradient8: json['strIngredient8'] as String,
+      ingradient9: json['strIngredient9'] as String,
+      ingradient10: json['strIngredient10'] as String,
+      measure1: json['strMeasure1'] as String,
+      measure2: json['strMeasure2'] as String,
+      measure3: json['strMeasure3'] as String,
+      measure4: json['strMeasure4'] as String,
+      measure5: json['strMeasure5'] as String,
+      measure6: json['strMeasure6'] as String,
+      measure7: json['strMeasure7'] as String,
+      measure8: json['strMeasure8'] as String,
+      measure9: json['strMeasure9'] as String,
+      measure10: json['strMeasure10'] as String,
+      imageSource: json['strImageSource'] as String,
+      dateModified: json['dateModified'] as String,
     );
   }
 }

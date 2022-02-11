@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cocktail_app/widgets/cocktail_page.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +18,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      body: const CocktailPage(),
     );
   }
 }
