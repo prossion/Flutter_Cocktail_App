@@ -1,13 +1,12 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class IngadientsWidget extends StatelessWidget {
-  IngadientsWidget({Key? key, required this.ingradient, required this.measure})
+  const IngadientsWidget(
+      {Key? key, required this.ingradient, required this.measure})
       : super(key: key);
-  String ingradient;
-  String measure;
-
-  // const pictureApi =
-//     'https://www.thecocktaildb.com/images/ingredients/gin-Small.png';
+  final String ingradient;
+  final String measure;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +21,23 @@ class IngadientsWidget extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Image.network(
-                  'https://www.thecocktaildb.com/images/ingredients/${ingradient}.png' ==
-                          null
-                      ? 'https://www.freeiconspng.com/thumbs/error-icon/error-icon-32.png'
-                      : 'https://www.thecocktaildb.com/images/ingredients/${ingradient}.png',
-                  height: 200.0,
-                  width: 250.0,
+                SizedBox(
+                  height: 200,
+                  width: 250,
+                  child: CachedNetworkImage(
+                    imageUrl:
+                        'https://www.thecocktaildb.com/images/ingredients/$ingradient.png',
+                    placeholder: (context, url) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    },
+                    errorWidget: (context, url, error) {
+                      return const Center(
+                        child: Text('Image not found'),
+                      );
+                    },
+                  ),
                 ),
                 Text(ingradient == null ? '' : ingradient),
                 Text(measure == null ? '' : measure),
