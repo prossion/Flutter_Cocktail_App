@@ -10,6 +10,7 @@ class CocktailProvider {
 
   Future<List<Cocktail>> getCocktail() async {
     const randomUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
+    print(randomUrl);
     // const searchurl = '';
     final response = await httpClent.get(Uri.parse(randomUrl),
         headers: {'Content-Type': 'application/json'});

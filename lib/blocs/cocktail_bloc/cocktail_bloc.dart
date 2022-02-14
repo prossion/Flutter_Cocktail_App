@@ -9,16 +9,18 @@ class CocktailBloc extends Bloc<CocktailEvent, CocktailState> {
   CocktailBloc({required final CocktailRepository repository})
       : _repository = repository,
         super(CocktailInitial()) {
-    on<CocktailFetched>((event, emit) async {
-      emit(CocktailInitial());
-      try {
-        List<Cocktail> _cocktailList = [];
-        _cocktailList = await _repository.getCocktail();
-        emit(CocktailLoaded(cocktail: _cocktailList));
-      } catch (_) {
-        emit(CocktailError());
-        rethrow;
-      }
-    });
+    on<CocktailFetched>(
+      (event, emit) async {
+        emit(CocktailInitial());
+        try {
+          List<Cocktail> _cocktailList = [];
+          _cocktailList = await _repository.getCocktail();
+          emit(CocktailLoaded(cocktail: _cocktailList));
+        } catch (_) {
+          emit(CocktailError());
+          rethrow;
+        }
+      },
+    );
   }
 }

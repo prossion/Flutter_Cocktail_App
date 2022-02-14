@@ -1,60 +1,116 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_cocktail_app/blocs/cocktail_bloc/cocktail_bloc.dart';
-import 'package:flutter_cocktail_app/blocs/cocktail_bloc/cocktail_state.dart';
 import 'package:flutter_cocktail_app/models/cocktail_entity.dart';
+import 'package:flutter_cocktail_app/widgets/main_screen/category_widget.dart';
+import 'package:flutter_cocktail_app/widgets/main_screen/ingadients_widget.dart';
+import 'package:flutter_cocktail_app/widgets/main_screen/photo_widget.dart';
+import 'package:flutter_cocktail_app/widgets/main_screen/title_widget.dart';
 
 class CocktailPage extends StatelessWidget {
-  const CocktailPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<CocktailBloc, CocktailState>(
-      builder: (context, state) {
-        if (state is CocktailInitial) {
-          return const Center(
-            child: Text('No data received'),
-          );
-        } else if (state is CocktailLoading) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        } else if (state is CocktailLoaded) {
-          List<Cocktail> cocktails = [];
-          cocktails = state.cocktail;
-          return ListView.builder(
-            itemCount: cocktails.length,
-            itemBuilder: (context, index) {
-              return CocktailPages(cocktail: cocktails[index]);
-            },
-          );
-        } else if (state is CocktailError) {
-          return const Center(
-            child: Text('Error'),
-          );
-        }
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      },
-    );
-  }
-}
-
-final pictureApi =
-    'https://www.thecocktaildb.com/images/ingredients/gin-Small.png';
-
-class CocktailPages extends StatelessWidget {
   final Cocktail cocktail;
-  const CocktailPages({Key? key, required this.cocktail}) : super(key: key);
+  const CocktailPage({Key? key, required this.cocktail}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.network(cocktail.photoDrink),
-        Text(cocktail.nameDrink),
-        Text(cocktail.ingradient1),
+        PhotoWidget(photo: cocktail.photoDrink),
+        Container(
+          // height: MediaQuery.of(context).size.height - 100,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15),
+              topRight: Radius.circular(35),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: Column(
+              children: [
+                // Title and id
+                NameWidget(name: cocktail.nameDrink, id: cocktail.id),
+                const SizedBox(height: 25),
+                // glass type, alcoholic, category
+                CategoryWidget(
+                    glass: cocktail.glassDrink,
+                    alcoholic: cocktail.alcoholicDrink,
+                    category: cocktail.categoryDrink),
+                const SizedBox(height: 25),
+                // Ingadients
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(left: 8.0),
+                      child: Text(
+                        'Ingradients',
+                        style: TextStyle(fontSize: 23),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        cocktail.ingradient1 == null
+                            ? const Divider()
+                            : IngadientsWidget(
+                                ingradient: cocktail.ingradient1,
+                                measure: cocktail.measure1),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        cocktail.ingradient2 == null
+                            ? const Divider()
+                            : IngadientsWidget(
+                                ingradient: cocktail.ingradient2,
+                                measure: cocktail.measure2),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        cocktail.ingradient3 == null
+                            ? const Divider()
+                            : IngadientsWidget(
+                                ingradient: cocktail.ingradient3,
+                                measure: cocktail.measure3),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        cocktail.ingradient4 == null
+                            ? const Divider()
+                            : IngadientsWidget(
+                                ingradient: cocktail.ingradient4,
+                                measure: cocktail.measure4),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        cocktail.ingradient5 == null
+                            ? const Divider()
+                            : IngadientsWidget(
+                                ingradient: cocktail.ingradient5,
+                                measure: cocktail.measure5),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        cocktail.ingradient6 == null
+                            ? const Divider()
+                            : IngadientsWidget(
+                                ingradient: cocktail.ingradient6,
+                                measure: cocktail.measure6),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        )
       ],
     );
   }

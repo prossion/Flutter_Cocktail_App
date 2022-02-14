@@ -14,7 +14,7 @@ class CocktailLoading extends CocktailState {
 }
 
 class CocktailLoaded extends CocktailState {
-  List<Cocktail> cocktail;
+  final List<Cocktail> cocktail;
   CocktailLoaded({required this.cocktail});
 
   @override
