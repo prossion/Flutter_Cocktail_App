@@ -5,7 +5,7 @@
 Flutter project to show a random cocktail and its composition, and search for cocktails by name.
 
 Application written by BLoC architecture. 
-##In this project I have used: 
+### In this project I have used: 
 - BLoC
 - Equatable
 - Http and other
