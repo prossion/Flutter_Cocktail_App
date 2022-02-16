@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cocktail_app/models/cocktail_entity.dart';
-import 'package:flutter_cocktail_app/widgets/main_screen/category_widget.dart';
-import 'package:flutter_cocktail_app/widgets/main_screen/ingadients_widget.dart';
-import 'package:flutter_cocktail_app/widgets/main_screen/instruction_widget.dart';
-import 'package:flutter_cocktail_app/widgets/main_screen/photo_widget.dart';
-import 'package:flutter_cocktail_app/widgets/main_screen/title_widget.dart';
+import 'package:flutter_cocktail_app/widgets/main_screen/main_screen.dart';
 
 class CocktailPage extends StatelessWidget {
   final Cocktail cocktail;
@@ -52,7 +48,7 @@ class CocktailPage extends StatelessWidget {
                               ingradient: cocktail.ingradient1,
                               measure: cocktail.measure1),
                       const SizedBox(
-                        width: 20,
+                        width: 15,
                       ),
                       cocktail.ingradient2 == null
                           ? const Divider()
@@ -60,7 +56,7 @@ class CocktailPage extends StatelessWidget {
                               ingradient: cocktail.ingradient2,
                               measure: cocktail.measure2),
                       const SizedBox(
-                        width: 20,
+                        width: 15,
                       ),
                       cocktail.ingradient3 == null
                           ? const Divider()
@@ -82,7 +78,7 @@ class CocktailPage extends StatelessWidget {
                               ingradient: cocktail.ingradient4,
                               measure: cocktail.measure4),
                       const SizedBox(
-                        width: 20,
+                        width: 15,
                       ),
                       cocktail.ingradient5 == null
                           ? const Divider()
@@ -90,7 +86,7 @@ class CocktailPage extends StatelessWidget {
                               ingradient: cocktail.ingradient5,
                               measure: cocktail.measure5),
                       const SizedBox(
-                        width: 20,
+                        width: 15,
                       ),
                       cocktail.ingradient6 == null
                           ? const Divider()
@@ -102,7 +98,7 @@ class CocktailPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 5,
+                height: 3,
               ),
               // instrution
               InstructionWidget(
@@ -127,3 +123,43 @@ class CocktailPage extends StatelessWidget {
     );
   }
 }
+
+// class CocktailPage extends StatelessWidget {
+//   final Cocktail cocktail;
+//   const CocktailPage({Key? key, required this.cocktail}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: SizedBox(
+//         width: double.maxFinite,
+//         height: double.maxFinite,
+//         child: Stack(
+//           children: [
+//             Positioned(
+//               left: 20,
+//               top: 70,
+//               child: Row(
+//                 children: [
+//                   IconButton(
+//                     onPressed: () {},
+//                     icon: const Icon(Icons.search),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             Positioned(
+//               left: 0,
+//               top: 0,
+//               child: Container(
+//                 width: double.maxFinite,
+//                 height: 300,
+
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

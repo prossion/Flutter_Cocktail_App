@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class NameWidget extends StatelessWidget {
-  NameWidget({Key? key, required this.name, required this.id})
+  const NameWidget({Key? key, required this.name, required this.id})
       : super(key: key);
-  String name;
-  String id;
+  final String name;
+  final String id;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class NameWidget extends StatelessWidget {
               height: 5,
             ),
             Text(
-              'id: ${id}',
+              'id: $id',
               style: const TextStyle(
                 fontSize: 15,
                 color: Colors.black45,

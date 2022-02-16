@@ -7,4 +7,7 @@ class CocktailRepository {
   CocktailRepository({required this.cocktailProvider});
 
   Future<List<Cocktail>> getCocktail() => cocktailProvider.getCocktail();
+
+  Future<List<Cocktail>> searchCocktail(query) =>
+      cocktailProvider.searchCocktail(query);
 }

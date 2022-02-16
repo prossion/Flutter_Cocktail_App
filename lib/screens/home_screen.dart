@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_cocktail_app/blocs/cocktail_bloc/cocktail_bloc.dart';
-import 'package:flutter_cocktail_app/blocs/cocktail_bloc/cocktail_event.dart';
-import 'package:flutter_cocktail_app/blocs/cocktail_bloc/cocktail_state.dart';
+import 'package:flutter_cocktail_app/blocs/cocktail_bloc/cocktail_bloc_barrel.dart';
 import 'package:flutter_cocktail_app/models/cocktail_entity.dart';
 import 'package:flutter_cocktail_app/widgets/cocktail_page.dart';
+import 'package:flutter_cocktail_app/widgets/search_screen.dart/custom_delegate_search.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
@@ -24,7 +23,9 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Cocktail App'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showSearch(context: context, delegate: CustomSearchDelegate());
+            },
             icon: const Icon(Icons.search),
           ),
         ],

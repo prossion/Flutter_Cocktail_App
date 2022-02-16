@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CategoryWidget extends StatelessWidget {
-  CategoryWidget(
+  const CategoryWidget(
       {Key? key,
       required this.glass,
       required this.alcoholic,
       required this.category})
       : super(key: key);
-  String glass;
-  String alcoholic;
-  String category;
+  final String glass;
+  final String alcoholic;
+  final String category;
 
   @override
   Widget build(BuildContext context) {

@@ -8,12 +8,15 @@ class CocktailProvider {
 
   CocktailProvider({required this.httpClent});
 
-  Future<List<Cocktail>> getCocktail() async {
-    const randomUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
-    print(randomUrl);
-    // const searchurl = '';
-    final response = await httpClent.get(Uri.parse(randomUrl),
-        headers: {'Content-Type': 'application/json'});
+  Future<List<Cocktail>> getCocktail() => _getCocktailFromUrl(
+      'https://www.thecocktaildb.com/api/json/v1/1/random.php');
+
+  Future<List<Cocktail>> searchCocktail(String query) => _getCocktailFromUrl(
+      'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=$query');
+
+  Future<List<Cocktail>> _getCocktailFromUrl(String url) async {
+    final response = await httpClent
+        .get(Uri.parse(url), headers: {'Content-Type': 'application/json'});
 
     if (response.statusCode == 200) {
       final cocktail = json.decode(response.body);
