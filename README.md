@@ -1,4 +1,14 @@
-# flutter_cocktail_app
+# Flutter Cocktail App V.1
+
+![ezgif-2-7b3a68e23d](https://user-images.githubusercontent.com/67923348/153933383-4a88d54a-7b87-4f19-b164-caea5c063125.gif)
+
+Flutter project to show a random cocktail and its composition, and search for cocktails by name.
+
+Application written by BLoC architecture. 
+### In this project I have used: 
+- BLoC
+- Equatable
+- Http and other
 
 A new Flutter project.
 
