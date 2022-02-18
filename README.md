@@ -1,6 +1,7 @@
 # Flutter Cocktail App V.2
 
-![ezgif-2-491814d085](https://user-images.githubusercontent.com/67923348/154277718-ee67bf6a-1644-4006-936f-848a98c6c5ab.gif)
+![ezgif-2-93634cb481](https://user-images.githubusercontent.com/67923348/154746801-d196f60d-116d-40c8-8155-8c5021171ef4.gif)
+
 
 
 Flutter project to show a random cocktail and its composition, and search for cocktails by name.
