@@ -37,8 +37,6 @@ class CustomSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    print('Inside custom search delegate and seacrh query is $query');
-
     BlocProvider.of<SearchCocktailBloc>(context, listen: false)
         .add(SearchCocktail(query));
 

@@ -39,7 +39,6 @@ class CocktailPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
                   Row(
-                    // crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       cocktail.ingradient1 == null
@@ -69,7 +68,6 @@ class CocktailPage extends StatelessWidget {
                     height: 15,
                   ),
                   Row(
-                    // crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       cocktail.ingradient4 == null
@@ -101,18 +99,37 @@ class CocktailPage extends StatelessWidget {
                 height: 3,
               ),
               // instrution
-              InstructionWidget(
-                instructions: cocktail.instructions,
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: InstructionWidget(
+                  instructions: cocktail.instructions,
+                ),
               ),
-              // Column(
-              //   children: [
-              //     const Text('Date Modified'),
-              //     const SizedBox(
-              //       height: 5,
-              //     ),
-              //     Text(cocktail.dateModified),
-              //   ],
-              // ),
+              const SizedBox(
+                height: 15,
+              ),
+              cocktail.dateModified == null
+                  ? const Divider()
+                  : Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Row(
+                        children: [
+                          const Text(
+                            'Date Modified:',
+                            style:
+                                TextStyle(color: Colors.black87, fontSize: 15),
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            cocktail.dateModified,
+                            style: const TextStyle(
+                                color: Colors.black87, fontSize: 15),
+                          ),
+                        ],
+                      ),
+                    ),
             ],
           ),
         ),
@@ -123,43 +140,3 @@ class CocktailPage extends StatelessWidget {
     );
   }
 }
-
-// class CocktailPage extends StatelessWidget {
-//   final Cocktail cocktail;
-//   const CocktailPage({Key? key, required this.cocktail}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SizedBox(
-//         width: double.maxFinite,
-//         height: double.maxFinite,
-//         child: Stack(
-//           children: [
-//             Positioned(
-//               left: 20,
-//               top: 70,
-//               child: Row(
-//                 children: [
-//                   IconButton(
-//                     onPressed: () {},
-//                     icon: const Icon(Icons.search),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             Positioned(
-//               left: 0,
-//               top: 0,
-//               child: Container(
-//                 width: double.maxFinite,
-//                 height: 300,
-
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }

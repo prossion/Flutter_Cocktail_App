@@ -11,8 +11,8 @@ class IngadientsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 260,
-      width: 110,
+      height: 250,
+      width: 115,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.black12,
@@ -20,8 +20,7 @@ class IngadientsWidget extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 200,
-            width: 250,
+            height: 180,
             child: CachedNetworkImage(
               imageUrl:
                   'https://www.thecocktaildb.com/images/ingredients/$ingradient.png',
@@ -38,6 +37,9 @@ class IngadientsWidget extends StatelessWidget {
             ),
           ),
           Text(ingradient == null ? '' : ingradient),
+          const SizedBox(
+            height: 3,
+          ),
           Text(measure == null ? '' : measure),
         ],
       ),

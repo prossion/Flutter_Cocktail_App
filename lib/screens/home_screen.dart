@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             } else if (state is CocktailError) {
               return const Center(
-                child: Text('Error'),
+                child: Text('Unexpected Failure!\nPlease try now '),
               );
             }
             return const Center(

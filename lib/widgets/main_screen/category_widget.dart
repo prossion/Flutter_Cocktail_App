@@ -33,7 +33,7 @@ class CategoryWidget extends StatelessWidget {
           ],
         ),
         const SizedBox(
-          width: 20,
+          width: 13,
         ),
         Container(
           decoration: const BoxDecoration(
@@ -43,7 +43,7 @@ class CategoryWidget extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15),
+            padding: const EdgeInsets.only(left: 13, right: 13),
             child: Column(
               children: [
                 const Text(
@@ -63,7 +63,7 @@ class CategoryWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          width: 20,
+          width: 13,
         ),
         Column(
           children: [
