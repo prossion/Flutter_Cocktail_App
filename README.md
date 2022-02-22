@@ -1,4 +1,4 @@
-# Flutter Cocktail App V.2
+# Flutter Cocktail App
 
 ![ezgif-2-93634cb481](https://user-images.githubusercontent.com/67923348/154746801-d196f60d-116d-40c8-8155-8c5021171ef4.gif)
 
